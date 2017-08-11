@@ -1,0 +1,9 @@
+# Make output
+bin/
+
+# snapcraft output
+prime/
+stage/
+parts/
+.snapcraft/
+*.snap

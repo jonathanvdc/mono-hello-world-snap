@@ -1,0 +1,16 @@
+#!/bin/sh
+
+# This shell script is based on David Paskevic's 'wrapper' script, which can be
+# found at https://github.com/casept/snap-pinta/blob/master/wrapper
+
+# This script sets the mono path so mono can find system DLLs within the snap.
+# See https://stackoverflow.com/questions/14452550/how-can-i-configure-mono-to-use-the-correct-paths-to-etc-directory-when-the-pre
+PKG_DIR=$SNAP/usr
+export MONO_PATH=$PKG_DIR/lib/mono/4.5
+export MONO_CONFIG=$SNAP/etc/mono/config
+export MONO_CFG_DIR=$PKG_DIR/etc
+#export C_INCLUDE_PATH=${PKG_DIR}/include
+export MONO_REGISTRY_PATH=~/.mono/registry
+export MONO_GAC_PREFIX=$PKG_DIR/lib/mono/gac/
+
+exec "$@"
