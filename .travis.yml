@@ -2,6 +2,7 @@ language: generic
 
 install:
   # Install snapcraft.
+  - sudo apt-add-repository ppa:snappy-dev/tools
   - sudo apt-get update
   - sudo apt-get install snap snapcraft build-essentials
 
