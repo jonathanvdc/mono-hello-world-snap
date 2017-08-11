@@ -3,7 +3,7 @@ sudo: required
 
 install:
   # Install snapcraft.
-  - sudo apt-add-repository -y ppa:snappy-dev/tools
+  - sudo apt-add-repository -y ppa:snappy-dev/beta
   - sudo apt-get update
   - sudo apt-get -y install snappy-tools snapcraft
 
