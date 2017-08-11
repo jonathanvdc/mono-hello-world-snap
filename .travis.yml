@@ -1,15 +1,14 @@
 language: generic
 sudo: required
 
-install:
-  # Install snapcraft.
-  - sudo apt-add-repository -y ppa:snappy-dev/beta
-  - sudo apt-get update
-  - sudo apt-get -y install snappy-tools snapcraft
+services:
+  - docker
 
 script:
   # Build the snap!
-  - snapcraft
+  - docker run -v $(pwd):$(pwd) -t snapcore/snapcraft sh -c
+      "apt update -qq && cd $(pwd) &&
+      snapcraft"
   # Install it.
   - sudo snap install hello_0.1_amd64.snap --dangerous
   # Run 'hello'
