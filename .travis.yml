@@ -1,0 +1,14 @@
+language: generic
+
+install:
+  # Install snapcraft.
+  - sudo apt-get update
+  - sudo apt-get install snap snapcraft build-essentials
+
+script:
+  # Build the snap!
+  - snapcraft
+  # Install it.
+  - sudo snap install hello_0.1_amd64.snap --dangerous
+  # Run 'hello'
+  - hello
