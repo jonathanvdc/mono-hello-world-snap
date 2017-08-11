@@ -4,6 +4,10 @@ sudo: required
 services:
   - docker
 
+install:
+  # Install snapd.
+  - sudo apt install snapd
+
 script:
   # Build the snap!
   - docker run -v $(pwd):$(pwd) -t snapcore/snapcraft sh -c
