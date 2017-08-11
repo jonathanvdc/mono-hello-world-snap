@@ -5,7 +5,7 @@ install:
   # Install snapcraft.
   - sudo apt-add-repository -y ppa:snappy-dev/tools
   - sudo apt-get update
-  - sudo apt-get -y install snap snapcraft build-essential
+  - sudo apt-get -y install snappy-tools snapcraft
 
 script:
   # Build the snap!
